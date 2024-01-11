@@ -1,9 +1,40 @@
 #include <iostream>
 using namespace std;
 
+void swap(int d[],int x, int y){
+int g = d[x];
+d[x] = d[y];
+d[y] = g;
+}
+
+void show(int d[],int N){
+for(int i = 0; i < N; i++){
+    cout  << d[i] << " ";
+    }
+
+}
+
+void thin(int d[],int a){
+
+	if(d[a] < d[a+1]) {
+        swap(d,a,a+1);
+        if(a>=1){
+        thin(d,a-1);
+        
+    
+    
+    }
+}
+}
+
 template <typename T>
 void insertionSort(T d[],int N){
-
+for(int end =0; end < 9; end++){
+	thin(d,end);
+    cout  << "Pass " << end+1 <<":";
+	show(d,10);
+	cout << "\n";
+}
 }
 
 int main(){
